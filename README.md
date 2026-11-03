@@ -19,7 +19,7 @@ where c_k are the Savitzky-Golay derivative coefficients.
 
 Local maxima of the smoothed signal (or zero-crossings of d1) are then filtered by height, prominence, and minimum distance.
 
-![Derivative method](peak_detection_figures/A1_derivative.png)
+![Derivative method](A1_derivative.png)
 
 **Notes**  
 - Simple and fast; widely used in classical chromatography data systems.  
@@ -36,7 +36,7 @@ filtered[i] = sum_k ( signal[i+k] * template[k] )
 
 Peaks are then taken as local maxima of the filtered trace that satisfy height and prominence thresholds.
 
-![Matched filter](peak_detection_figures/A2_matched_filter.png)
+![Matched filter](A2_matched_filter.png)
 
 **Notes**  
 - Optimal for a known shape in white noise; improves signal-to-noise ratio.  
@@ -55,7 +55,7 @@ where psi is the scaled and translated wavelet.
 
 A practical detector links local maxima across scales into ridges and keeps only ridges that are long enough and exceed a signal-to-noise threshold. The time location of the strongest point on a valid ridge is the reported apex.
 
-![CWT method](peak_detection_figures/A3_cwt.png)
+![CWT method](A3_cwt.png)
 
 **Notes**  
 - Naturally multi-scale; robust to noise and baseline.  
@@ -68,7 +68,7 @@ Extract features from sliding windows (or from wavelet/ROI representations) and 
 
 In the example a random forest is trained on simple window statistics (max, mean, standard deviation, relative apex location, area). Ground-truth apices are marked with stars; red points are windows whose predicted probability exceeds 0.55.
 
-![ML method](peak_detection_figures/A4_ml.png)
+![ML method](A4_ml.png)
 
 **Notes**  
 - Can learn complex or lab-specific patterns (see Agilent AI Peak Integration for MassHunter).  
